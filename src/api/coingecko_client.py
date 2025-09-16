@@ -2,9 +2,10 @@
 import pandas as pd
 
 class CoinGeckoClient:
-    BASE_URL = "https://api.coingecko.com/api/v3"
+    def __init__(self):
+        self.BASE_URL = "https://api.coingecko.com/api/v3"
 
-    def get_bitcoin_market_chart(self, days=30, vs_currency="usd"):
+    def get_bitcoin_market_chart(self, days, vs_currency="usd"):
         """
         Retorna DataFrame com colunas: timestamp (datetime) e price (float).
         days: número de dias para recuperar (aceita 'max' também).

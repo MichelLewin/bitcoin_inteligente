@@ -17,3 +17,8 @@ class Repository:
         with self.engine.connect() as conn:
             result = conn.execute(query).scalar()
         return result
+    
+    def get_view(self, view_name):
+        """Retorna um DataFrame a partir de uma view no Postgres"""
+        query = f"SELECT * FROM {view_name}"
+        return pd.read_sql(query, self.engine)

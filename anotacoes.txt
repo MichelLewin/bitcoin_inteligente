@@ -1,0 +1,9 @@
+Entrar no ambiente
+.\venv\Scripts\activate  
+
+Executar a carga dos dados a partir da API
+py -m src.main
+
+
+Executar os reportes
+py -m src.reports.main
